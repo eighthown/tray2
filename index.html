@@ -1,114 +1,335 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мир Владов</title>
+    <title>Ice Poseidon's Gaming & Casino Stream Hub</title>
+    <meta name="description" content="Enter the world of Ice Poseidon! Get live updates, watch his latest casino stream highlights, and discover the gaming strategies that define his career.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://iceposeidon-streamer.com/">
+    <meta property="og:title" content="Ice Poseidon's Live Gaming & Casino Hub">
+    <meta property="og:description" content="The official hub for Ice Poseidon's live streams. Catch all the casino action, IRL adventures, and high-stakes gaming content.">
+    <meta property="og:url" content="https://iceposeidon-streamer.com/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ice Poseidon's Live Gaming & Casino Hub">
+    <meta name="twitter:description" content="The official hub for Ice Poseidon's live streams. Catch all the casino action, IRL adventures, and high-stakes gaming content.">
+    <meta name="twitter:image" content="https://placehold.co/1200x630/FF6B00/0D1B2A?text=Ice+Poseidon+Streams">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="icon" href="./favicon.ico" type="image/x-icon">
+	<link rel="icon" href="./favicon-32x32.png" sizes="32x32" type="image/png">
     <style>
-        /* Мы будем использовать Tailwind CSS для стилей, но добавим базовый стиль для body */
-        body {
-            font-family: 'Inter', sans-serif;
+        :root { --bg-dark: #0D1B2A; --bg-mid: #1B263B; --text-light: #E0E1DD; --text-mid: #A9B4C2; --accent1: #FF6B00; --accent2: #778DA9; }
+        html { scroll-behavior: smooth; }
+        body { background-color: var(--bg-dark); color: var(--text-light); font-family: 'Roboto', sans-serif; line-height: 1.7; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; font-weight: 700; color: var(--accent1); letter-spacing: 1px; }
+        h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; }
+        h2 { font-size: clamp(2rem, 5vw, 3rem); text-align: center; margin-bottom: 3rem; text-transform: uppercase; }
+        h3 { font-size: clamp(1.5rem, 4vw, 2rem); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+        .btn { display: inline-block; padding: 12px 28px; background-image: linear-gradient(45deg, var(--accent1) 0%, #FF8533 100%); color: var(--bg-dark); text-decoration: none; font-weight: bold; border-radius: 50px; transition: transform 0.3s ease, box-shadow 0.3s ease; border: none; cursor: pointer; text-align: center; }
+        .btn:hover, .btn:focus { transform: scale(1.05); box-shadow: 0 10px 20px rgba(255, 107, 0, 0.25); }
+        .header { background-color: rgba(13, 27, 42, 0.8); backdrop-filter: blur(10px); padding: 1rem 0; position: sticky; top: 0; z-index: 100; width: 100%; border-bottom: 1px solid var(--bg-mid); }
+        .nav { display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { font-size: 1.5rem; font-weight: 900; color: var(--text-light); text-decoration: none; }
+        .nav-menu { display: flex; gap: 1.5rem; }
+        .nav-link { color: var(--text-light); text-decoration: none; font-weight: 700; position: relative; padding-bottom: 5px; }
+        .nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 3px; background-color: var(--accent1); transition: width 0.3s ease; }
+        .nav-link:hover::after, .nav-link:focus::after { width: 100%; }
+        .nav-toggle { display: none; background: none; border: none; cursor: pointer; }
+        .hamburger { display: block; width: 25px; height: 3px; background-color: var(--text-light); position: relative; }
+        .hamburger::before, .hamburger::after { content: ''; position: absolute; left: 0; width: 100%; height: 3px; background-color: var(--text-light); transition: transform 0.3s ease; }
+        .hamburger::before { top: -8px; }
+        .hamburger::after { bottom: -8px; }
+        .section { padding: 5rem 0; }
+        .hero { min-height: 80vh; display: flex; align-items: center; text-align: center; background: radial-gradient(circle, rgba(27, 38, 59, 0.7) 0%, rgba(13, 27, 42, 0.9) 80%), no-repeat center center/cover; }
+        .hero-content { animation: fadeIn 1.5s ease-in-out; }
+        .hero h1 { text-shadow: 0 4px 15px rgba(0,0,0,0.4); }
+        .hero p { font-size: 1.25rem; max-width: 700px; margin: 1.5rem auto 2.5rem; color: var(--text-mid); }
+        .casino-block { background-color: var(--bg-mid); }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .card { background-color: var(--bg-dark); border-radius: 12px; overflow: hidden; box-shadow: 0 8px 16px rgba(0,0,0,0.2); transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 12px 24px rgba(0,0,0,0.3); }
+        .card-img { width: 100%; height: 180px; object-fit: cover; }
+        .card-body { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
+        .card-body h3 { margin-top: 0; }
+        .card-body p { color: var(--text-mid); flex-grow: 1; }
+        .card-body .btn { margin-top: 1rem; align-self: flex-start; }
+        .broadcast-block .container { display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center; }
+        .stream-embed { position: relative; padding-top: 56.25%; border-radius: 12px; overflow: hidden; border: 3px solid var(--accent1); }
+        .stream-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .stream-info p { margin-bottom: 1.5rem; }
+        .about-block { background-color: var(--bg-mid); }
+        .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+        .about-img { width: 100%; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.25); }
+        .faq-block .container { max-width: 900px; }
+        .faq-item { background-color: var(--bg-mid); border-radius: 8px; margin-bottom: 1rem; }
+        .faq-question { width: 100%; background: none; border: none; text-align: left; padding: 1.5rem; font-size: 1.2rem; font-weight: 700; color: var(--text-light); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.5s ease, padding 0.5s ease; }
+        .faq-answer p { padding: 0 1.5rem 1.5rem; border-top: 1px solid var(--bg-dark); margin:0; }
+        .faq-item.active .faq-answer { max-height: 300px; }
+        .faq-icon { transition: transform 0.3s ease; }
+        .faq-item.active .faq-icon { transform: rotate(180deg); }
+        .footer { background-color: var(--bg-dark); padding: 3rem 0; text-align: center; color: var(--text-mid); border-top: 1px solid var(--bg-mid); }
+        .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 1.5rem; }
+        .footer-links a { color: var(--text-mid); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--accent1); }
+        .footer p { font-size: 0.9rem; }
+        @media (min-width: 768px) {
+            .broadcast-block .container { grid-template-columns: 2fr 1fr; }
         }
+        @media (max-width: 767px) {
+            .nav-menu { display: none; position: absolute; top: 100%; left: 0; background-color: var(--bg-dark); width: 100%; flex-direction: column; text-align: center; padding: 1rem 0; }
+            .nav-menu.active { display: flex; }
+            .nav-toggle { display: block; }
+            .about-content { grid-template-columns: 1fr; }
+        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Ice Poseidon",
+      "url": "https://iceposeidon-streamer.com/",
+      "sameAs": [
+        "https://kick.com/iceposeidon",
+        "https://twitter.com/REALIcePoseidon",
+        "https://www.instagram.com/ice_poseidon/"
+      ],
+      "description": "Ice Poseidon is a prominent live streamer known for his dynamic IRL adventures and high-energy casino gaming content. He engages a massive audience through his unfiltered broadcasts and strategic gameplay."
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Who exactly is Ice Poseidon and what makes him famous?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ice Poseidon, whose real name is Paul Denino, is an influential American internet figure and live broadcaster. He originally rose to prominence through his pioneering IRL (In Real Life) streams. His fame stems from his adventurous, often chaotic content, which has now expanded to include exciting casino gaming broadcasts for his dedicated fanbase, the CX Network."
+        }
+      },{
+        "@type": "Question",
+        "name": "Where can one watch Ice Poseidon's live broadcasts?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The primary platform for Ice Poseidon's live content is Kick.com. You can view his streams directly on his channel at kick.com/iceposeidon. This website also provides a direct feed to his live broadcasts for convenient viewing. Following his Kick channel is the best method to get notifications for when he goes live."
+        }
+      },{
+        "@type": "Question",
+        "name": "What types of casino games does Ice Poseidon typically play?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ice Poseidon's casino sessions are diverse, though he shows a strong preference for high-energy online slots. He frequently explores new titles, engages in high-stakes play, and pursues significant jackpots. While slots are his main focus, he also occasionally plays table games such as blackjack, offering a varied gaming experience to his viewers."
+        }
+      }]
+    }
+    </script>
 </head>
-<body class="bg-slate-900 text-white">
+<body>
 
-    <div class="container mx-auto px-4 py-8 md:py-16 max-w-4xl">
+    <header class="header">
+        <nav class="container nav">
+            <a href="#" class="nav-logo">ICE POSEIDON</a>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#about" class="nav-link">About Ice Poseidon</a>
+                <a href="#casinos" class="nav-link">Ice Poseidon's Casinos</a>
+                <a href="#stream" class="nav-link">Ice Poseidon Live</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+            </div>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+        </nav>
+    </header>
 
-        <!-- Заголовок -->
-        <header class="text-center mb-12">
-            <h1 class="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-sky-500">
-                Мир Владов
-            </h1>
-            <p class="text-slate-400 mt-4 text-lg">
-                Сайт, посвященный всем Владам этого мира. Создан для тестирования GitHub.
-            </p>
-        </header>
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>Ice Poseidon's Universe of Streaming</h1>
+                <p>Welcome to the core of Ice Poseidon's world. Experience every high-stakes casino run, unpredictable real-life journey, and legendary gaming moment. This is your premier destination for all live content and exclusive insights from one of streaming's most dynamic personalities.</p>
+                <a href="#stream" class="btn">View Live Broadcast</a>
+            </div>
+        </section>
 
-        <!-- Основной контент -->
-        <main class="space-y-10">
-
-            <!-- Секция 1: Кто такой Влад? -->
-            <section class="bg-slate-800 p-6 rounded-xl shadow-lg transition-transform hover:scale-105">
-                <h2 class="text-2xl font-bold mb-4 text-sky-400">Кто такой Влад?</h2>
-                <p class="text-slate-300 leading-relaxed">
-                    Влад — это не просто имя, это состояние души. Носители этого имени известны своей харизмой, решительностью и уникальным чувством юмора. Имя Владислав имеет славянское происхождение и означает "владеющий славой". Краткая форма "Влад" стала популярной как самостоятельное имя.
-                </p>
-            </section>
-
-            <!-- Секция 2: Знаменитые Влады -->
-            <section class="bg-slate-800 p-6 rounded-xl shadow-lg transition-transform hover:scale-105">
-                <h2 class="text-2xl font-bold mb-4 text-purple-400">Знаменитые Влады</h2>
-                <ul class="list-disc list-inside space-y-2 text-slate-300">
-                    <li>
-                        <span class="font-semibold">Влад III Цепеш (Дракула):</span> Господарь Валахии, историческая фигура, ставшая прототипом знаменитого вампира.
-                    </li>
-                    <li>
-                        <span class="font-semibold">Владислав Галкин:</span> Советский и российский актёр театра и кино.
-                    </li>
-                    <li>
-                        <span class="font-semibold">Владимир Высоцкий:</span> Советский поэт, актёр и автор-исполнитель песен.
-                    </li>
-                </ul>
-            </section>
-
-            <!-- Секция 3: Интерактивный Влад -->
-            <section class="bg-slate-800 p-6 rounded-xl shadow-lg text-center">
-                <h2 class="text-2xl font-bold mb-4">Интерактивный Влад</h2>
-                <p class="text-slate-400 mb-6">Нажмите на кнопку, чтобы узнать случайный факт о Владах!</p>
-                <button id="factButton" class="bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 px-6 rounded-lg shadow-md transition-all duration-300 transform hover:-translate-y-1">
-                    Узнать факт!
-                </button>
-                <div id="factDisplay" class="mt-6 p-4 bg-slate-700 rounded-lg min-h-[50px] text-lg text-slate-200 flex items-center justify-center transition-opacity duration-500 opacity-0">
-                    <!-- Сюда будет вставлен факт -->
+        <section id="casinos" class="casino-block section">
+            <div class="container">
+                <h2>Ice Poseidon's Top Casino Picks</h2>
+                <p style="text-align:center; max-width:800px; margin:-2rem auto 4rem; color:var(--text-mid);">Ever wonder where Ice Poseidon engages in his high-stakes casino gameplay? Below are the premier online casinos that are frequently showcased during his broadcasts. Delve into these platforms to enjoy a gaming experience championed by a streaming legend, complete with generous offers for newcomers eager to follow Ice Poseidon’s casino journey.</p>
+                <div class="grid-3">
+                    <div class="card">
+                        <img src="./img/bethall.png" alt="Promotional image for Bethall Casino" class="card-img" width="600" height="360" loading="lazy">
+                        <div class="card-body">
+                            <h3>Bethall Casino Highlights</h3>
+                            <p>Recognized for its extensive game library and appealing bonuses. It's a regular venue for Ice's high-limit sessions, where he demonstrates his prowess in both slots and strategic table games. Bethall's VIP offerings are particularly attractive.</p>
+                            <a href="./bethall.html" target="_blank" rel="noopener noreferrer" class="btn">Explore Bethall</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="./img/brucebet.png" alt="Promotional image for Brucebet Casino" class="card-img" width="600" height="360" loading="lazy">
+                        <div class="card-body">
+                            <h3>Brucebet Casino Action</h3>
+                            <p>This platform delivers state-of-the-art slots and a flawless mobile interface, ideal for broadcasting on the move. Ice Poseidon often favors Brucebet due to its innovative features and efficient payout system, essential for uninterrupted streams.</p>
+                            <a href="./brucebet.html" target="_blank" rel="noopener noreferrer" class="btn">Experience Brucebet</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="./img/vincispin.png" alt="Promotional image for Vincispin Casino" class="card-img" width="600" height="360" loading="lazy">
+                        <div class="card-body">
+                            <h3>Vincispin Casino Adventures</h3>
+                            <p>A prime destination for live dealer experiences and competitive tournaments, where Ice frequently contends for the top rankings. Vincispin is celebrated for its immersive casino environment and skilled dealers, ensuring every game is memorable.</p>
+                            <a href="./vincispin.html" target="_blank" rel="noopener noreferrer" class="btn">Join Vincispin</a>
+                        </div>
+                    </div>
                 </div>
-            </section>
+                 <p style="text-align:center; max-width:800px; margin:4rem auto 0; color:var(--text-mid); font-size: 0.9rem;">Always engage in responsible gaming. The listed casinos are platforms where Ice Poseidon has broadcasted; individual results will differ. Please confirm you are of legal age to gamble in your region. Gaming should be for fun, not a financial strategy.</p>
+            </div>
+        </section>
 
-        </main>
+        <section id="stream" class="broadcast-block section">
+            <div class="container">
+                <div class="stream-embed">
+                     <iframe
+                        src="https://player.kick.com/iceposeidon"
+                        title="Ice Poseidon's Live Kick.com Broadcast"
+                        allowfullscreen="true"
+                        allow="autoplay; encrypted-media; picture-in-picture">
+                    </iframe>
+                </div>
+                <div class="stream-info">
+                    <h2>Ice Poseidon's Live Broadcast</h2>
+                    <p>You're in the right place for the action. Ice Poseidon streams frequently on the Kick platform. The player here is your direct window to his live content. If he's online, you'll see the broadcast right now. If not, feel free to explore his past streams or follow him to get alerts for his next broadcast. Find answers to "what are Ice Poseidon's stream times" and prepare for the next chapter.</p>
+                    <a href="https://kick.com/iceposeidon" target="_blank" rel="noopener noreferrer" class="btn">Visit Ice Poseidon's Kick Channel</a>
+                </div>
+            </div>
+        </section>
 
-        <!-- Подвал -->
-        <footer class="text-center mt-16 text-slate-500">
-            <p>&copy; 2024 Мир Владов. Все права защищены... или нет.</p>
-        </footer>
+        <section id="about" class="about-block section">
+            <div class="container">
+                <h2>The Story of Ice Poseidon</h2>
+                <div class="about-content">
+                    <div>
+                        <img src="./img/ice-poseidon.jpg" alt="Ice Poseidon during one of his live gaming streams" class="about-img" width="600" height="450" loading="lazy">
+                    </div>
+                    <div>
+                        <h3>A Pioneer in Live Entertainment</h3>
+                        <p>Paul Denino, known worldwide as <strong>Ice Poseidon</strong>, is a defining personality in the live streaming era. Celebrated for popularizing IRL (In Real Life) broadcasting, Ice has engaged millions with his distinctive mix of comedy, spontaneity, and unfiltered realism. His path through the digital world is highlighted by innovative content and the loyal CX Network community. To appreciate Ice Poseidon's content is to anticipate the unforeseen and savor the experience.</p>
+                        <p>From navigating urban landscapes to conquering the high-stakes realm of digital casinos, Ice Poseidon’s broadcasts reflect his bold content creation philosophy. He consistently redefines entertainment, giving his audience a unique window into his life. His fans often look for "Ice Poseidon's top casino plays" or "Ice Poseidon's slot strategies," eager to gain a deeper understanding of his gaming techniques and his approach to the casino world.</p>
+                        <p>Now, Ice Poseidon directs his signature style toward casino gaming, presenting exhilarating sessions on popular slots and other games. This website serves as the official portal to his most recent casino ventures, strategic analyses, and the energetic community that supports his journey. Find out where Ice Poseidon is currently broadcasting his casino sessions and join the thrill of his latest adventures.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    </div>
+        <section id="faq" class="faq-block section">
+            <div class="container">
+                <h2>Ice Poseidon's FAQ</h2>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Who exactly is Ice Poseidon and what makes him famous?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Ice Poseidon, whose real name is Paul Denino, is an influential American internet figure and live broadcaster. He originally rose to prominence through his pioneering IRL (In Real Life) streams. His fame stems from his adventurous, often chaotic content, which has now expanded to include exciting casino gaming broadcasts for his dedicated fanbase, the CX Network.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Where can one watch Ice Poseidon's live broadcasts?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>The primary platform for Ice Poseidon's live content is Kick.com. You can view his streams directly on his channel at kick.com/iceposeidon. This website also provides a direct feed to his live broadcasts for convenient viewing. Following his Kick channel is the best method to get notifications for when he goes live.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What types of casino games does Ice Poseidon typically play?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Ice Poseidon's casino sessions are diverse, though he shows a strong preference for high-energy online slots. He frequently explores new titles, engages in high-stakes play, and pursues significant jackpots. While slots are his main focus, he also occasionally plays table games such as blackjack, offering a varied gaming experience to his viewers.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How is Ice Poseidon's streaming schedule determined?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>The most effective way to keep up with Ice Poseidon's schedule is by following him on his Kick channel and social media profiles. He typically announces his broadcast intentions there. Given the spontaneous nature of his content, activating notifications on Kick is highly advised to ensure you never miss a live moment.</p>
+                    </div>
+                </div>
+                 <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Is this website the official source for Ice Poseidon?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Indeed, iceposeidon-streamer.com serves as the central hub for the Ice Poseidon community. It offers direct access to his live broadcasts, details about his casino partnerships, his preferred slot games, and other community news. The site is a key resource that enhances his official Kick channel and other social platforms.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <h4>Stay Connected with Ice Poseidon</h4>
+            <div class="footer-links">
+                <a href="https://kick.com/iceposeidon" target="_blank" rel="noopener noreferrer">Kick</a>
+                <a href="https://twitter.com/REALIcePoseidon" target="_blank" rel="noopener noreferrer">Twitter (X)</a>
+                <a href="https://www.instagram.com/ice_poseidon/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            </div>
+            <p>&copy; 2025 iceposeidon-streamer.com. All Rights Reserved.</p>
+            <p>Disclaimer: This website is for entertainment purposes. Gambling involves risk and may not be suitable for all individuals. Please gamble responsibly and only wager what you can afford to lose. You must be of legal gambling age in your jurisdiction. This site provides informational content about Ice Poseidon's activities.</p>
+        </div>
+    </footer>
 
     <script>
-        // --- JavaScript код для интерактивности ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const navToggle = document.getElementById('nav-toggle');
+            const navMenu = document.getElementById('nav-menu');
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', () => {
+                    navMenu.classList.toggle('active');
+                });
+            }
 
-        // Находим элементы на странице
-        const factButton = document.getElementById('factButton');
-        const factDisplay = document.getElementById('factDisplay');
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const button = item.querySelector('.faq-question');
+                if (button) {
+                    button.addEventListener('click', () => {
+                        const wasActive = item.classList.contains('active');
+                        faqItems.forEach(i => i.classList.remove('active'));
+                        if (!wasActive) {
+                            item.classList.add('active');
+                        }
+                    });
+                }
+            });
 
-        // Создаем массив с фактами
-        const vladFacts = [
-            "Имя Владислав означает 'владеющий славой'.",
-            "В Румынии Влад - довольно распространенное имя, во многом благодаря историческому наследию.",
-            "Многие Влады обладают талантом к точным наукам и аналитическому мышлению.",
-            "Краткая форма 'Влад' стала популярной как самостоятельное имя в XX веке.",
-            "День ангела Владислава отмечается 7 октября.",
-            "Существует популярное мнение, что Влады — верные друзья и надежные товарищи.",
-            "Энергетика имени Влад ассоциируется с силой, волей и уверенностью в себе."
-        ];
-
-        // Функция для получения случайного факта
-        function showRandomFact() {
-            // Получаем случайный индекс из массива
-            const randomIndex = Math.floor(Math.random() * vladFacts.length);
-            const randomFact = vladFacts[randomIndex];
-
-            // Показываем блок с фактом и вставляем текст
-            factDisplay.style.opacity = 1;
-            factDisplay.textContent = randomFact;
-        }
-
-        // Добавляем обработчик события на кнопку
-        factButton.addEventListener('click', showRandomFact);
+            document.querySelectorAll('.nav-link').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const href = this.getAttribute('href');
+                    if (href.startsWith('#')) {
+                        e.preventDefault();
+                        document.querySelector(href).scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                        if (navMenu.classList.contains('active')) {
+                           navMenu.classList.remove('active');
+                        }
+                    }
+                });
+            });
+        });
     </script>
-
 </body>
 </html>
